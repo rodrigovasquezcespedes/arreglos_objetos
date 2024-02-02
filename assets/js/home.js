@@ -8,7 +8,7 @@ const ventas = [
   { nombre: "Casa Elegante", src: "https://media.istockphoto.com/id/1469202195/es/foto/una-casa-con-un-coche-aparcado-delante-de-ella.jpg?s=1024x1024&w=is&k=20&c=n5qjlvRqG_0gs98Gv9egaaA8wSfQ9aS-d6ceKpPBXZQ=", descripcion: "Elegante residencia con acabados de lujo y detalles sofisticados.", ubicacion: "quintero", habitaciones: 3, costo: 210000000, smoke: true, pets: true },
   { nombre: "Casa del Lago", src: "https://media.istockphoto.com/id/1560744923/es/foto/casas-adosadas-modernas-con-elementos-de-pared-de-madera.jpg?s=1024x1024&w=is&k=20&c=DyZdVGd8fwDBoPsKrgsEKB9RGrDd7TS2It-zGz5L4Ps=", descripcion: "Construida junto a un lago, con acceso privado y muelle.", ubicacion: "algarrobo", habitaciones: 3, costo: 240000000, smoke: false, pets: true }
 ];
-
+//se crea un arreglo de objetos
 const arriendos = [
   { nombre: "Casa Elegante", src: "https://images.freeimages.com/images/large-previews/3db/at-home-1231024.jpg", descripcion: "Elegante residencia con acabados de lujo y detalles sofisticados.", ubicacion: "quintero", habitaciones: 3, costo: 210000, smoke: true, pets: true },
   { nombre: "Casa Rodante", src: "https://media.istockphoto.com/id/1318264210/es/foto/moderno-interior-de-sal%C3%B3n-con-dos-sillones-y-estanter%C3%ADa-nicho-arco-c%C3%B3modo-l%C3%A1mpara-leer-y.jpg?s=1024x1024&w=is&k=20&c=N5dMNhRDpDrURkCbl-l_HhgcYjGhpVw86_zH3qozt7w=", descripcion: "Encantadora casa con ambiente cálido y chimenea.", ubicacion: "melipilla", habitaciones: 1, costo: 250000, smoke: false, pets: true },
@@ -20,17 +20,21 @@ const arriendos = [
   { nombre: "Casa del Lago", src: "https://media.istockphoto.com/id/1560744923/es/foto/casas-adosadas-modernas-con-elementos-de-pared-de-madera.jpg?s=1024x1024&w=is&k=20&c=DyZdVGd8fwDBoPsKrgsEKB9RGrDd7TS2It-zGz5L4Ps=", descripcion: "Construida junto a un lago, con acceso privado y muelle.", ubicacion: "algarrobo", habitaciones: 3, costo: 240000, smoke: false, pets: true }
 ];
 
+// esta funcion separa los numeros en miles
 const separarPorPuntos = (numero) => {
   return numero.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
 };
 
-
+//se selecciona el elemento por el id 
 const casaContainer = document.querySelector('#contenedor');
 const casaVenta = document.querySelector('#contenedor_1');
 const casaArriendo = document.querySelector('#contenedor_2');
 
+//se le pasan los 3 paramentos a la funcion 
 const mostrarCasas = (casas, limite, tipo) => {
+//
 
+//almacena en la variable el nombre del queryselecto para elegir en que id se mostraran los datos 
   let contenedor;
 
   if (tipo === 'venta') {
@@ -40,7 +44,11 @@ const mostrarCasas = (casas, limite, tipo) => {
   } else {
     contenedor = casaContainer;
   }
-
+/* en el bucle for se crea una variable que se inicializa en 0 
+luego se pregunta si i es menos al limite que se le pasa por la funcion y si i es mayor a la
+cantidad de elementos del arreglo sino con i++ aumenta 1 hasta que i sea mayor al limite y a la cantidad 
+de elementos del arreglo
+*/
   for (let i = 0; i < limite && i < casas.length; i++) {
     const casa = casas[i];
     const template = `
