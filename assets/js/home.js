@@ -68,7 +68,6 @@ const mostrarCasas = (casas, limite, tipo) => {
           </p>
         </div>
       </div>
-        
         `;
     contenedor.innerHTML += template;
   }
