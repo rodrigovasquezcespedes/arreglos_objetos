@@ -71,19 +71,22 @@ const mostrarCasas = (casas, limite, tipo) => {
         `;
     contenedor.innerHTML += template;
   }
-};
+};// condicional ternaria en smoke y pet es verdadera sino es falsa
 
 
 const urlParams = new URLSearchParams(window.location.search);
-const id = urlParams.get('id'); // Obtén el parámetro 'mode' de la URL
-
+const id = urlParams.get('id'); //obtiene el valor de la id que le pasamos por url 
+//compara el id recibido y lo comprar
 if (id === '1') {
-  // Mostrar todas las casas en la página de venta
+  // se le pasa el nombre del arreglo y con length la cantidad de elementos dentro del arreglo
   mostrarCasas(ventas, ventas.length);
 } else if (id === '2') {
   // Mostrar todas las casas en la página de arriendo
   mostrarCasas(arriendos, arriendos.length);
 } else {
+  /* se le pasa el nombre del arreglo y la cantidad de elementos que puede mostrar y con el ulimo
+  parametro selecciono que id se usara para mostrar los datos
+  */
   mostrarCasas(ventas, 3, 'venta');
   mostrarCasas(arriendos, 3, 'arriendo');
 }
