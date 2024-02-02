@@ -1,0 +1,46 @@
+.main-section {
+    background-image: url('../img/img-main.jpeg');
+    background-size: cover; /* La imagen cubrirá todo el ancho y largo */
+    background-position: center;
+    height: 300px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    text-align: center;
+}
+
+h2{
+    text-align: center;
+}
+
+.row{
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+}
+
+#contenedor{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+    text-align: center;
+    margin-left: -130px;
+}
+#contenedor_1 ,#contenedor_2{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    text-align: center;
+    margin-left: 70px;
+    padding-bottom: 30px;
+}
+
+.card {
+    height: 300px;
+    width: 300px;
+}
+
+.card img{
+    height: 200px;
+}
